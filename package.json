@@ -1,0 +1,29 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "TODO list",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app/index.js",
+    "dev": "nodemon app/index.js",
+    "command-test": "node app/index.js test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamduler/nodejs-todolist.git"
+  },
+  "author": "Duler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamduler/nodejs-todolist/issues"
+  },
+  "homepage": "https://github.com/iamduler/nodejs-todolist#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "yargs": "^17.7.2"
+  }
+}
