@@ -1,7 +1,7 @@
 // import yargs from "yargs"; // For ES6
 
 const yargs = require('yargs');
-const fs = require('fs'); // file system (built-in)
+const chalk = require('chalk');
 const { getAll, createTask, retrieveTask, updateTask, deleteTask } = require('./model/task.js');
 
 // Tạo lệnh test
@@ -9,7 +9,7 @@ const { getAll, createTask, retrieveTask, updateTask, deleteTask } = require('./
 yargs.command({
     command: "test",
     handler: () => {
-        console.log('test');
+        console.log(chalk.bgGray('test'));
     }
 });
 
@@ -29,7 +29,7 @@ yargs.command({
         const {title, desc} = args;
         const newTask = createTask(title, desc);
 
-        console.log('Created task: ', newTask);
+        console.log(chalk.bgCyan('Created task: '), newTask);
     }
 });
 
@@ -38,7 +38,7 @@ yargs.command({
     command: "read-all",
     handler: () => {
         const result = getAll();
-        console.log('Result: ', result);
+        console.log(chalk.bgGreen('Result: '), result);
     }
 });
 
@@ -50,10 +50,10 @@ yargs.command({
         const task = retrieveTask(id);
 
         if (task) {
-            console.log('Task data: ', task);
+            console.log(chalk.bgBlue('Task data: '), task);
         }
         else {
-            console.log('Task not found!');
+            console.log(chalk.bgRed('Task not found!'));
         }
     }
 });
@@ -66,10 +66,10 @@ yargs.command({
         const task = updateTask(id, title, desc);
 
         if (task) {
-            console.log('Task updated: ', task);
+            console.log(chalk.bgYellow('Task updated: '), task);
         }
         else {
-            console.log('Task not found!');
+            console.log(chalk.bgRed('Task not found!'));
         }
     }
 });
@@ -82,10 +82,10 @@ yargs.command({
         const result = deleteTask(id, title, desc);
 
         if (result) {
-            console.log('Task deteted');
+            console.log(chalk.bgWhite('Task deteted'));
         }
         else {
-            console.log('Task not found!');
+            console.log(chalk.bgRed('Task not found!'));
         }
     }
 });
